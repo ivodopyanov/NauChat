@@ -1,0 +1,7 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" 
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:cell="com.google.gwt.user.cellview.client">
+<g:FlowPanel ui:field="panel">
+	<g:TextBox ui:field="textBox"/>
+</g:FlowPanel>
+</ui:UiBinder>
