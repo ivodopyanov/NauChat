@@ -10,6 +10,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.view.client.HasData;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
@@ -28,16 +29,21 @@ public class NauChatDisplayImpl extends Composite implements NauChatDisplay
 
     @UiField
     FlowPanel panel;
+    @UiField(provided = true)
     CellList<String> list;
     @UiField
     TextBox textBox;
 
     @Inject
-    public NauChatDisplayImpl(@Named(NAU_CHAT_CELL_CODE) Cell<String> cell)
+    public NauChatDisplayImpl(@Named(NAU_CHAT_CELL_CODE) Cell<String> cell, NauChatListResources listResources)
     {
-        list = new CellList<String>(cell);
+        list = new CellList<String>(cell, listResources);
         initWidget(uiBinder.createAndBindUi(this));
-        panel.insert(list, 0);
+    }
+
+    public HasData<String> getList()
+    {
+        return list;
     }
 
     public HasValue<String> getTextBox()

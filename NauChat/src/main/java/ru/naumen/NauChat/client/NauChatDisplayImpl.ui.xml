@@ -1,7 +1,9 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" 
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
-	xmlns:cell="com.google.gwt.user.cellview.client">
-<g:FlowPanel ui:field="panel">
-	<g:TextBox ui:field="textBox"/>
+	xmlns:cell="urn:import:com.google.gwt.user.cellview.client">
+<ui:with field="res" type="ru.naumen.NauChat.client.NauChatResources" />
+<g:FlowPanel ui:field="panel" styleName="{res.nauChatCss.panel}">
+	<cell:CellList ui:field="list"/>
+	<g:TextBox ui:field="textBox" styleName="{res.nauChatCss.inputBox}"/>
 </g:FlowPanel>
 </ui:UiBinder>

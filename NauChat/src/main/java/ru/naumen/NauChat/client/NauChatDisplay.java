@@ -5,6 +5,7 @@ import net.customware.gwt.presenter.client.Display;
 
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.IsWidget;
+import com.google.gwt.view.client.HasData;
 
 /**
  * @author ivodopyanov
@@ -13,6 +14,8 @@ import com.google.gwt.user.client.ui.IsWidget;
 public interface NauChatDisplay extends Display, IsWidget
 {
     String NAU_CHAT_CELL_CODE = "nauChatCellCode";
+
+    HasData<String> getList();
 
     HasValue<String> getTextBox();
 }

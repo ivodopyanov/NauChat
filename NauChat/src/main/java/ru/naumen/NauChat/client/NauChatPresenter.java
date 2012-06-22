@@ -1,6 +1,8 @@
 /*$Id$*/
 package ru.naumen.NauChat.client;
 
+import java.util.Arrays;
+
 import net.customware.gwt.presenter.client.BasicPresenter;
 import net.customware.gwt.presenter.client.EventBus;
 import net.customware.gwt.presenter.client.place.Place;
@@ -38,6 +40,8 @@ public class NauChatPresenter extends BasicPresenter<NauChatDisplay>
     protected void onBind()
     {
         getDisplay().getTextBox().setValue("NauChat");
+        getDisplay().getList().setRowData(0, Arrays.asList("Message1", "Message2"));
+        getDisplay().getList().setRowCount(2, true);
     }
 
     @Override
