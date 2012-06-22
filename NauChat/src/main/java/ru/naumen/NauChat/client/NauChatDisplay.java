@@ -3,6 +3,7 @@ package ru.naumen.NauChat.client;
 
 import net.customware.gwt.presenter.client.Display;
 
+import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.IsWidget;
 
 /**
@@ -11,5 +12,7 @@ import com.google.gwt.user.client.ui.IsWidget;
  */
 public interface NauChatDisplay extends Display, IsWidget
 {
+    String NAU_CHAT_CELL_CODE = "nauChatCellCode";
 
+    HasValue<String> getTextBox();
 }

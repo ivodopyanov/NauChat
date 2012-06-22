@@ -37,6 +37,7 @@ public class NauChatPresenter extends BasicPresenter<NauChatDisplay>
     @Override
     protected void onBind()
     {
+        getDisplay().getTextBox().setValue("NauChat");
     }
 
     @Override

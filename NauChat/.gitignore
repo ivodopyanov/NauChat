@@ -1,0 +1,34 @@
+#*******************************************************************
+#java specific
+*.class
+#*******************************************************************
+#maven specific
+target
+*/target
+#*******************************************************************
+#eclipse specific
+.project
+*/.project
+
+.settings
+*/.settings
+
+.externalToolBuilders
+*/.externalToolBuilders
+
+
+.classpath
+*/.classpath
+#*******************************************************************
+#emma
+coverage.ec
+*/coverage.ec
+#*******************************************************************
+*.log
+*/.gwt
+webapp*
+
+.directory
+*/.directory
+
+gwt-unitCache*

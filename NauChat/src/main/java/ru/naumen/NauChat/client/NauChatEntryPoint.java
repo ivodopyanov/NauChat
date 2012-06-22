@@ -10,6 +10,7 @@ public class NauChatEntryPoint implements EntryPoint
     {
         NauChatGinjector injector = GWT.create(NauChatGinjector.class);
         NauChatPresenter presenter = injector.nauChatPresenter();
+        presenter.bind();
         RootPanel.get().add(presenter.getDisplay());
     }
 }
