@@ -26,6 +26,7 @@ public class NauChatGinModule extends AbstractGinModule
 
         bind(NauChatDisplay.class).to(NauChatDisplayImpl.class);
         bind(EventBus.class).to(DefaultEventBus.class);
+        bind(NauChatListDataProvider.class);
 
         //@formatter:off
         bind(new TypeLiteral<Cell<String>>(){}).annotatedWith(Names.named(NauChatDisplay.NAU_CHAT_CELL_CODE)).to(TextCell.class);
