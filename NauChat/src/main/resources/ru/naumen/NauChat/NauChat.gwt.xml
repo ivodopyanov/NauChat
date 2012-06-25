@@ -16,7 +16,10 @@
   
   <!-- Other module inherits                                      -->
   <inherits name='net.customware.gwt.presenter.Presenter' />
-  <inherits name="com.google.gwt.inject.Inject"/>
+  <inherits name='com.google.gwt.inject.Inject'/>
+  <inherits name='net.customware.gwt.dispatch.Dispatch' />
+  <inherits name="com.google.common.collect.Collect"/>
+  
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='ru.naumen.NauChat.client.NauChatEntryPoint' />

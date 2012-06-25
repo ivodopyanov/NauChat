@@ -6,6 +6,8 @@ import net.customware.gwt.presenter.client.EventBus;
 import net.customware.gwt.presenter.client.place.Place;
 import net.customware.gwt.presenter.client.place.PlaceRequest;
 
+import com.google.gwt.core.client.Scheduler;
+import com.google.gwt.core.client.Scheduler.RepeatingCommand;
 import com.google.inject.Inject;
 
 /**
@@ -14,6 +16,7 @@ import com.google.inject.Inject;
  */
 public class NauChatPresenter extends BasicPresenter<NauChatDisplay>
 {
+    private final static int LIST_REFRESH_PERIOD = 10000;
     @Inject
     NauChatListDataProvider dataProvider;
 
@@ -42,6 +45,14 @@ public class NauChatPresenter extends BasicPresenter<NauChatDisplay>
     {
         dataProvider.addDataDisplay(getDisplay().getList());
         getDisplay().getTextBox().setValue("NauChat");
+        Scheduler.get().scheduleFixedDelay(new RepeatingCommand()
+        {
+            public boolean execute()
+            {
+                dataProvider.onRangeChanged(getDisplay().getList());
+                return true;
+            }
+        }, LIST_REFRESH_PERIOD);
     }
 
     @Override

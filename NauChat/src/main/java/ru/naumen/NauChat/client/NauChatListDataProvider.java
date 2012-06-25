@@ -1,10 +1,15 @@
 /*$Id$*/
 package ru.naumen.NauChat.client;
 
-import java.util.Arrays;
+import net.customware.gwt.dispatch.client.DispatchAsync;
+import ru.naumen.NauChat.shared.GetMessageListAction;
+import ru.naumen.NauChat.shared.GetMessageListResult;
 
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.AsyncDataProvider;
 import com.google.gwt.view.client.HasData;
+import com.google.inject.Inject;
 
 /**
  * @author ivodopyanov
@@ -12,10 +17,25 @@ import com.google.gwt.view.client.HasData;
  */
 public class NauChatListDataProvider extends AsyncDataProvider<String>
 {
+    @Inject
+    DispatchAsync dispatch;
+
     @Override
-    protected void onRangeChanged(HasData<String> display)
+    protected void onRangeChanged(final HasData<String> display)
     {
-        display.setRowData(0, Arrays.asList("Message3", "Message2", "Message3", "Message4"));
-        display.setRowCount(4);
+        dispatch.execute(new GetMessageListAction(), new AsyncCallback<GetMessageListResult>()
+        {
+            public void onFailure(Throwable caught)
+            {
+                GWT.log("Exception while executing GetMessageListAction: " + caught.getMessage());
+                display.setRowCount(0);
+            }
+
+            public void onSuccess(GetMessageListResult result)
+            {
+                display.setRowData(0, result.getMessages());
+                display.setRowCount(result.getMessages().size());
+            }
+        });
     }
 }

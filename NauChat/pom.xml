@@ -77,6 +77,26 @@
 	  <artifactId>gwt-presenter</artifactId>
 	  <version>1.0.0</version>
 	</dependency>
+	<dependency>
+	  <groupId>net.customware.gwt.dispatch</groupId>
+	  <artifactId>gwt-dispatch</artifactId>
+	  <version>1.2.0</version>
+	</dependency>
+	<dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava-gwt</artifactId>
+      <version>12.0</version>
+	</dependency>
+	<dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>12.0</version>
+	</dependency>
+	<dependency>
+	  <groupId>com.google.inject.extensions</groupId>
+	  <artifactId>guice-servlet</artifactId>
+	  <version>3.0</version>
+	</dependency>
   </dependencies>
   
   
@@ -87,6 +107,14 @@
 
     <plugins>
 
+	  <plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-eclipse-plugin</artifactId>
+		<configuration>
+		  <packaging>jar</packaging>
+		  <downloadSources>true</downloadSources>
+		</configuration>
+	  </plugin>
 
       <!-- Copy static web files before executing gwt:run -->
       <plugin>
@@ -105,6 +133,7 @@
           <webappDirectory>${webappDirectory}</webappDirectory>
         </configuration>
       </plugin>
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -118,7 +147,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
-        <version>2.4.0-SNAPSHOT</version>
+        <version>2.4.0</version>
         <executions>
           <execution>
             <goals>
@@ -130,9 +159,9 @@
         <!-- Plugin configuration. There are many available options, see 
           gwt-maven-plugin documentation at codehaus.org -->
         <configuration>
+          <module>ru.naumen.NauChat.NauChat</module>
           <runTarget>NauChat.html</runTarget>
           <hostedWebapp>${webappDirectory}</hostedWebapp>
-          <i18nMessagesBundle>ru.naumen.NauChat.client.Messages</i18nMessagesBundle>
         </configuration>
       </plugin>
       
