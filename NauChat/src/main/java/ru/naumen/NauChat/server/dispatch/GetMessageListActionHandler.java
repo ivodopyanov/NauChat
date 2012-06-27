@@ -12,6 +12,7 @@ import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 
 /**
+ * Обработчик @GetMessageListAction - обращается к сервису @MessagingService
  * @author ivodopyanov
  * @since 25.06.2012
  */

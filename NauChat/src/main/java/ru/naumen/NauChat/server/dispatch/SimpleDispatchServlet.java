@@ -15,12 +15,13 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 /**
+ * Класс, необходимый для реализации gwt-dispatch на стороне сервера через Google Guice
  * @author ivodopyanov
  * @since 25.06.2012
  */
 public class SimpleDispatchServlet extends RemoteServiceServlet implements StandardDispatchService
 {
-    private Dispatch dispatch;
+    private final Dispatch dispatch;
 
     public SimpleDispatchServlet()
     {

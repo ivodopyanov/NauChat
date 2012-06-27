@@ -29,7 +29,9 @@ public class GetMessageListResult implements Result
     public List<String> getMessages()
     {
         if (messages == null)
+        {
             messages = Lists.newArrayList();
+        }
         return messages;
     }
 

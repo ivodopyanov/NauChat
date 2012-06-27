@@ -10,6 +10,7 @@ import com.google.inject.Injector;
 import com.google.inject.servlet.GuiceServletContextListener;
 
 /**
+ * Класс, необходимый для реализации gwt-dispatch на стороне сервера через Google Guice
  * @author ivodopyanov
  * @since 25.06.2012
  */

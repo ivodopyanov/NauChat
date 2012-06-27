@@ -9,6 +9,7 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 
 /**
+ * Модуль Google Guice - для реализации механизма Dependency Injection на стороне сервера.
  * @author ivodopyanov
  * @since 22.06.2012
  */

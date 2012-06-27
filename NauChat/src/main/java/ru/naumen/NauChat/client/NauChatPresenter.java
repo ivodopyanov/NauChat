@@ -11,12 +11,14 @@ import com.google.gwt.core.client.Scheduler.RepeatingCommand;
 import com.google.inject.Inject;
 
 /**
+ * Презентер для дисплея NauChatDisplay. Отвечает за инициализацию дисплея, исходное заполнение данных, 
+ * а также вызывает обновление списка с периодичностью LIST_REFRESH_PERIOD_MS
  * @author ivodopyanov
  * @since 20.06.2012
  */
 public class NauChatPresenter extends BasicPresenter<NauChatDisplay>
 {
-    private final static int LIST_REFRESH_PERIOD = 10000;
+    private final static int LIST_REFRESH_PERIOD_MS = 10000;
     @Inject
     NauChatListDataProvider dataProvider;
 
@@ -52,7 +54,7 @@ public class NauChatPresenter extends BasicPresenter<NauChatDisplay>
                 dataProvider.onRangeChanged(getDisplay().getList());
                 return true;
             }
-        }, LIST_REFRESH_PERIOD);
+        }, LIST_REFRESH_PERIOD_MS);
     }
 
     @Override

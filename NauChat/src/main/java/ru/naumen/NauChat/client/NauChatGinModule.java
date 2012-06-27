@@ -16,6 +16,7 @@ import com.google.inject.TypeLiteral;
 import com.google.inject.name.Names;
 
 /**
+ * Модуль Google Gin для реализации механизма Dependency Injection на стороне клиента
  * @author ivodopyanov
  * @since 20.06.2012
  */

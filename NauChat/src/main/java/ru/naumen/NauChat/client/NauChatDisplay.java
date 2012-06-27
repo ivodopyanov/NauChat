@@ -8,6 +8,7 @@ import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.view.client.HasData;
 
 /**
+ * Интерфейс дисплея, в котором есть список сообщений и поле для ввода нового сообщения.
  * @author ivodopyanov
  * @since 20.06.2012
  */

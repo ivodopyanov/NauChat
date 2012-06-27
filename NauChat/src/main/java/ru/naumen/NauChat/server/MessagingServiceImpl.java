@@ -6,12 +6,13 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 /**
+ * Реализация @MessagingService - пока просто при каждом вызове добавляет новое сообщение MessageXXX
  * @author ivodopyanov
  * @since 22.06.2012
  */
 public class MessagingServiceImpl implements MessagingService
 {
-    private List<String> messages = Lists.newArrayList();
+    private final List<String> messages = Lists.newArrayList();
 
     public List<String> getMessages()
     {
