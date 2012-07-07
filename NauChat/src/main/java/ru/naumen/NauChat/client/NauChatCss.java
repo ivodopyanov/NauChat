@@ -15,4 +15,7 @@ public interface NauChatCss extends CssResource
 
     @ClassName("panel")
     String panel();
+    
+    @ClassName("decorator")
+    String decorator();
 }

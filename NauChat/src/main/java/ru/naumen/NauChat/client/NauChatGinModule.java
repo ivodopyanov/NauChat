@@ -1,6 +1,8 @@
 /*$Id$*/
 package ru.naumen.NauChat.client;
 
+import ru.naumen.NauChat.client.resources.NauChatListResources;
+import ru.naumen.NauChat.client.resources.NauChatResources;
 import net.customware.gwt.dispatch.client.DefaultExceptionHandler;
 import net.customware.gwt.dispatch.client.DispatchAsync;
 import net.customware.gwt.dispatch.client.standard.StandardDispatchAsync;

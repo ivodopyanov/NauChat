@@ -1,5 +1,5 @@
 /*$Id$*/
-package ru.naumen.NauChat.client;
+package ru.naumen.NauChat.client.resources;
 
 import com.google.gwt.user.cellview.client.CellList.Resources;
 import com.google.gwt.user.cellview.client.CellList.Style;

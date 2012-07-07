@@ -1,14 +1,18 @@
 /*$Id$*/
 package ru.naumen.NauChat.client;
 
+import ru.naumen.NauChat.client.resources.NauChatListResources;
+
 import com.google.gwt.cell.client.Cell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.CellList;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.DecoratorPanel;
 import com.google.gwt.user.client.ui.HasValue;
+import com.google.gwt.user.client.ui.Panel;
+import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.view.client.HasData;
 import com.google.inject.Inject;
@@ -26,14 +30,17 @@ public class NauChatDisplayImpl extends Composite implements NauChatDisplay
      * UiBinder для этого класса. Поскольку нет аннотации @UiTemplate, то по умолчанию берет файл classname.ui.xml 
      * @author ivodopyanov
      */
-    static interface NauChatDisplayImplUiBinder extends UiBinder<FlowPanel, NauChatDisplayImpl>
+    static interface NauChatDisplayImplUiBinder extends UiBinder<Panel, NauChatDisplayImpl>
     {
     }
 
     private static NauChatDisplayImplUiBinder uiBinder = GWT.create(NauChatDisplayImplUiBinder.class);
 
     @UiField
-    FlowPanel panel;
+    DecoratorPanel decorator;
+    
+    @UiField
+    ScrollPanel panel;
     /**
      * provided=true указывает на то, что этот виджет обязуемся проинициализировать до вызова uiBInder.createAndBindUi
      */
@@ -49,12 +56,14 @@ public class NauChatDisplayImpl extends Composite implements NauChatDisplay
         initWidget(uiBinder.createAndBindUi(this));
     }
 
-    public HasData<String> getList()
+    @Override
+	public HasData<String> getList()
     {
         return list;
     }
 
-    public HasValue<String> getTextBox()
+    @Override
+	public HasValue<String> getTextBox()
     {
         return textBox;
     }
@@ -63,7 +72,8 @@ public class NauChatDisplayImpl extends Composite implements NauChatDisplay
      * startProcessing предназначен для вызова при выполнении длительного метода (например, запрос на сервер),
      * чтобы заблокировать возможность повторного вызова
      */
-    public void startProcessing()
+    @Override
+	public void startProcessing()
     {
         textBox.setEnabled(false);
     }
@@ -71,7 +81,8 @@ public class NauChatDisplayImpl extends Composite implements NauChatDisplay
     /**
      * stopProcessing предназначен для вызова по окончании работы длительного метода, чтобы разблокировать дисплей
      */
-    public void stopProcessing()
+    @Override
+	public void stopProcessing()
     {
         textBox.setEnabled(true);
     }

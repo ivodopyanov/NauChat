@@ -1,6 +1,8 @@
 /*$Id$*/
 package ru.naumen.NauChat.client;
 
+import ru.naumen.NauChat.client.resources.NauChatResources;
+
 import com.google.gwt.inject.client.GinModules;
 import com.google.gwt.inject.client.Ginjector;
 

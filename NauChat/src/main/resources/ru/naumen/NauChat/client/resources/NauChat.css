@@ -1,0 +1,15 @@
+.inputBox {
+	background-color: white;
+}
+
+
+.decorator{
+    margin: 10px auto;
+	text-align: center;
+	height: 420px;
+}
+
+.panel {
+    margin: 5px auto;
+	width: 400px;
+}
