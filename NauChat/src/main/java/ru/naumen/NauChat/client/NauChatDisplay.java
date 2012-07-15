@@ -3,6 +3,7 @@ package ru.naumen.NauChat.client;
 
 import net.customware.gwt.presenter.client.Display;
 
+import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.view.client.HasData;
@@ -19,4 +20,6 @@ public interface NauChatDisplay extends Display, IsWidget
     HasData<String> getList();
 
     HasValue<String> getTextBox();
+    
+    HasClickHandlers getSendButton();
 }

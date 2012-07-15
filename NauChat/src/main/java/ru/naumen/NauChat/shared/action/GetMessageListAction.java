@@ -1,5 +1,5 @@
 /*$Id$*/
-package ru.naumen.NauChat.shared;
+package ru.naumen.NauChat.shared.action;
 
 import net.customware.gwt.dispatch.shared.Action;
 
@@ -7,7 +7,7 @@ import net.customware.gwt.dispatch.shared.Action;
  * @author ivodopyanov
  * @since 25.06.2012
  */
-public class GetMessageListAction implements Action<GetMessageListResult>
+public class GetMessageListAction implements Action<MessageListResult>
 {
     public GetMessageListAction()
     {

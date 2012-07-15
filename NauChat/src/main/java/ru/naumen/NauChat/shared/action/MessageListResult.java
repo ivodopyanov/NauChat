@@ -1,5 +1,5 @@
 /*$Id$*/
-package ru.naumen.NauChat.shared;
+package ru.naumen.NauChat.shared.action;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,17 +13,17 @@ import com.google.common.collect.Lists;
  * @author ivodopyanov
  * @since 25.06.2012
  */
-public class GetMessageListResult implements Result
+public class MessageListResult implements Result
 {
     private ArrayList<ChatMessage> messages;
 
-    public GetMessageListResult(ArrayList<ChatMessage> messages)
+    public MessageListResult(ArrayList<ChatMessage> messages)
     {
         super();
         this.messages = messages;
     }
 
-    protected GetMessageListResult()
+    protected MessageListResult()
     {
     }
 

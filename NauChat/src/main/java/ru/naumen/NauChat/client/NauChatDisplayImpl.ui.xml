@@ -9,7 +9,10 @@
 			<g:ScrollPanel ui:field="panel" styleName="{res.nauChatCss.panel}">
 				<cell:CellList ui:field="list" />
 			</g:ScrollPanel>
+			<g:HorizontalPanel>
 			<g:TextBox ui:field="textBox" styleName="{res.nauChatCss.inputBox}" />
+			<g:Button text="Send" ui:field="sendButton" />
+			</g:HorizontalPanel>
 		</g:VerticalPanel>
 	</g:DecoratorPanel>
 </ui:UiBinder>

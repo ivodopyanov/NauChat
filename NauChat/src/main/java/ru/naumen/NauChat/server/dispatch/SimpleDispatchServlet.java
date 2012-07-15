@@ -21,7 +21,9 @@ import com.google.inject.Injector;
  */
 public class SimpleDispatchServlet extends RemoteServiceServlet implements StandardDispatchService
 {
-    private final Dispatch dispatch;
+	private static final long serialVersionUID = -1169995859662002293L;
+	
+	private final Dispatch dispatch;
 
     public SimpleDispatchServlet()
     {
@@ -31,7 +33,8 @@ public class SimpleDispatchServlet extends RemoteServiceServlet implements Stand
         dispatch = new SimpleDispatch(registry);
     }
 
-    public Result execute(Action<?> action) throws DispatchException
+    @Override
+	public Result execute(Action<?> action) throws DispatchException
     {
         try
         {

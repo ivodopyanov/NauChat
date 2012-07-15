@@ -2,8 +2,8 @@
 package ru.naumen.NauChat.client;
 
 import net.customware.gwt.dispatch.client.DispatchAsync;
-import ru.naumen.NauChat.shared.GetMessageListAction;
-import ru.naumen.NauChat.shared.GetMessageListResult;
+import ru.naumen.NauChat.shared.action.GetMessageListAction;
+import ru.naumen.NauChat.shared.action.MessageListResult;
 import ru.naumen.NauChat.shared.message.ChatMessage;
 
 import com.google.common.base.Function;
@@ -21,7 +21,7 @@ import com.google.inject.Inject;
  */
 public class NauChatListDataProvider extends AsyncDataProvider<String>
 {
-    private static class RangeChangedCallback implements AsyncCallback<GetMessageListResult>
+    public static class RangeChangedCallback implements AsyncCallback<MessageListResult>
     {
         private final HasData<String> display;
 
@@ -38,7 +38,7 @@ public class NauChatListDataProvider extends AsyncDataProvider<String>
         }
 
         @Override
-		public void onSuccess(GetMessageListResult result)
+		public void onSuccess(MessageListResult result)
         {
             display.setRowData(0, Lists.transform(result.getMessages(), new Function<ChatMessage, String>()
             		{

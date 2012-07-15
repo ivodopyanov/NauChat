@@ -5,9 +5,11 @@ import ru.naumen.NauChat.client.resources.NauChatListResources;
 
 import com.google.gwt.cell.client.Cell;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.CellList;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.DecoratorPanel;
 import com.google.gwt.user.client.ui.HasValue;
@@ -41,18 +43,24 @@ public class NauChatDisplayImpl extends Composite implements NauChatDisplay
     
     @UiField
     ScrollPanel panel;
+    
     /**
      * provided=true указывает на то, что этот виджет обязуемся проинициализировать до вызова uiBInder.createAndBindUi
      */
     @UiField(provided = true)
     CellList<String> list;
+    
     @UiField
     TextBox textBox;
-
+    
+    @UiField
+    Button sendButton;
+    
     @Inject
     public NauChatDisplayImpl(@Named(NAU_CHAT_CELL_CODE) Cell<String> cell, NauChatListResources listResources)
     {
         list = new CellList<String>(cell, listResources);
+        list.setPageSize(Integer.MAX_VALUE);
         initWidget(uiBinder.createAndBindUi(this));
     }
 
@@ -85,5 +93,13 @@ public class NauChatDisplayImpl extends Composite implements NauChatDisplay
 	public void stopProcessing()
     {
         textBox.setEnabled(true);
+        textBox.setValue("");
+        panel.scrollToBottom();
+    }
+
+    @Override
+	public HasClickHandlers getSendButton() 
+    {
+    	return sendButton;
     }
 }

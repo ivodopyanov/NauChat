@@ -5,8 +5,8 @@ import net.customware.gwt.dispatch.server.ActionHandler;
 import net.customware.gwt.dispatch.server.ExecutionContext;
 import net.customware.gwt.dispatch.shared.DispatchException;
 import ru.naumen.NauChat.server.MessagingService;
-import ru.naumen.NauChat.shared.GetMessageListAction;
-import ru.naumen.NauChat.shared.GetMessageListResult;
+import ru.naumen.NauChat.shared.action.GetMessageListAction;
+import ru.naumen.NauChat.shared.action.MessageListResult;
 
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
@@ -16,14 +16,14 @@ import com.google.inject.Inject;
  * @author ivodopyanov
  * @since 25.06.2012
  */
-public class GetMessageListActionHandler implements ActionHandler<GetMessageListAction, GetMessageListResult>
+public class GetMessageListActionHandler implements ActionHandler<GetMessageListAction, MessageListResult>
 {
     @Inject
     MessagingService messagingService;
 
-    public GetMessageListResult execute(GetMessageListAction arg0, ExecutionContext arg1) throws DispatchException
+    public MessageListResult execute(GetMessageListAction arg0, ExecutionContext arg1) throws DispatchException
     {
-        return new GetMessageListResult(Lists.newArrayList(messagingService.getMessages()));
+        return new MessageListResult(Lists.newArrayList(messagingService.getMessages()));
     }
 
     public Class<GetMessageListAction> getActionType()
@@ -31,7 +31,7 @@ public class GetMessageListActionHandler implements ActionHandler<GetMessageList
         return GetMessageListAction.class;
     }
 
-    public void rollback(GetMessageListAction arg0, GetMessageListResult arg1, ExecutionContext arg2)
+    public void rollback(GetMessageListAction arg0, MessageListResult arg1, ExecutionContext arg2)
             throws DispatchException
     {
     }

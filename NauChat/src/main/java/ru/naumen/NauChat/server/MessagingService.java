@@ -13,4 +13,6 @@ import ru.naumen.NauChat.shared.message.ChatMessage;
 public interface MessagingService
 {
     List<ChatMessage> getMessages();
+    
+    List<ChatMessage> addMessage(ChatMessage message);
 }

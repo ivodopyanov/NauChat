@@ -4,7 +4,6 @@ package ru.naumen.NauChat.server;
 import java.util.List;
 
 import ru.naumen.NauChat.shared.message.ChatMessage;
-import ru.naumen.NauChat.shared.message.ChatMessageImpl;
 
 import com.google.common.collect.Lists;
 
@@ -20,7 +19,12 @@ public class MessagingServiceImpl implements MessagingService
     @Override
 	public List<ChatMessage> getMessages()
     {
-        messages.add(new ChatMessageImpl("Message" + messages.size()));
         return messages;
     }
+
+	@Override
+	public List<ChatMessage> addMessage(ChatMessage message) {
+        messages.add(message);
+        return messages;
+	}
 }

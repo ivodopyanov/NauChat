@@ -2,7 +2,8 @@
 package ru.naumen.NauChat.server.dispatch;
 
 import net.customware.gwt.dispatch.server.guice.ActionHandlerModule;
-import ru.naumen.NauChat.shared.GetMessageListAction;
+import ru.naumen.NauChat.shared.action.GetMessageListAction;
+import ru.naumen.NauChat.shared.action.SendMessageAction;
 
 /**
  * Класс, определяющий отношения между Action и обрабатывающими их ActionHandler
@@ -15,5 +16,6 @@ public class ActionsModule extends ActionHandlerModule
     protected void configureHandlers()
     {
         bindHandler(GetMessageListAction.class, GetMessageListActionHandler.class);
+        bindHandler(SendMessageAction.class, SendMessageActionHandler.class);
     }
 }
