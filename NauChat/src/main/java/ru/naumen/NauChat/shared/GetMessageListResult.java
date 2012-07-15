@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.customware.gwt.dispatch.shared.Result;
+import ru.naumen.NauChat.shared.message.ChatMessage;
 
 import com.google.common.collect.Lists;
 
@@ -14,9 +15,9 @@ import com.google.common.collect.Lists;
  */
 public class GetMessageListResult implements Result
 {
-    private ArrayList<String> messages;
+    private ArrayList<ChatMessage> messages;
 
-    public GetMessageListResult(ArrayList<String> messages)
+    public GetMessageListResult(ArrayList<ChatMessage> messages)
     {
         super();
         this.messages = messages;
@@ -26,7 +27,7 @@ public class GetMessageListResult implements Result
     {
     }
 
-    public List<String> getMessages()
+    public List<ChatMessage> getMessages()
     {
         if (messages == null)
         {
@@ -35,7 +36,7 @@ public class GetMessageListResult implements Result
         return messages;
     }
 
-    public void setMessages(ArrayList<String> messages)
+    public void setMessages(ArrayList<ChatMessage> messages)
     {
         this.messages = messages;
     }

@@ -3,6 +3,8 @@ package ru.naumen.NauChat.server;
 
 import java.util.List;
 
+import ru.naumen.NauChat.shared.message.ChatMessage;
+
 /**
  * Сервис, предоставляющий методы для работы со списком сообщений
  * @author ivodopyanov
@@ -10,5 +12,5 @@ import java.util.List;
  */
 public interface MessagingService
 {
-    List<String> getMessages();
+    List<ChatMessage> getMessages();
 }

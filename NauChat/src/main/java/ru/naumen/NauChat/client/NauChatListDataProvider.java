@@ -4,7 +4,10 @@ package ru.naumen.NauChat.client;
 import net.customware.gwt.dispatch.client.DispatchAsync;
 import ru.naumen.NauChat.shared.GetMessageListAction;
 import ru.naumen.NauChat.shared.GetMessageListResult;
+import ru.naumen.NauChat.shared.message.ChatMessage;
 
+import com.google.common.base.Function;
+import com.google.common.collect.Lists;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.AsyncDataProvider;
@@ -27,15 +30,24 @@ public class NauChatListDataProvider extends AsyncDataProvider<String>
             this.display = display;
         }
 
-        public void onFailure(Throwable caught)
+        @Override
+		public void onFailure(Throwable caught)
         {
             GWT.log("Exception while executing GetMessageListAction: " + caught.getMessage());
             display.setRowCount(0);
         }
 
-        public void onSuccess(GetMessageListResult result)
+        @Override
+		public void onSuccess(GetMessageListResult result)
         {
-            display.setRowData(0, result.getMessages());
+            display.setRowData(0, Lists.transform(result.getMessages(), new Function<ChatMessage, String>()
+            		{
+            			@Override
+						public String apply(ChatMessage message)
+            			{
+            				return message.getMessageText();
+            			}
+            		}));
             display.setRowCount(result.getMessages().size());
         }
     }
