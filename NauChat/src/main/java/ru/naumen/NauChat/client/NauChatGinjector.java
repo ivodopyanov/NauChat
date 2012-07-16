@@ -1,6 +1,7 @@
 /*$Id$*/
 package ru.naumen.NauChat.client;
 
+import ru.naumen.NauChat.client.auth.CheckLoginPresenter;
 import ru.naumen.NauChat.client.resources.NauChatResources;
 
 import com.google.gwt.inject.client.GinModules;
@@ -18,4 +19,6 @@ public interface NauChatGinjector extends Ginjector
     NauChatPresenter nauChatPresenter();
 
     NauChatResources resources();
+    
+    CheckLoginPresenter checkLoginPresenter();
 }

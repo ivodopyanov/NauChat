@@ -1,13 +1,18 @@
 /*$Id$*/
 package ru.naumen.NauChat.client;
 
-import ru.naumen.NauChat.client.resources.NauChatListResources;
-import ru.naumen.NauChat.client.resources.NauChatResources;
 import net.customware.gwt.dispatch.client.DefaultExceptionHandler;
 import net.customware.gwt.dispatch.client.DispatchAsync;
 import net.customware.gwt.dispatch.client.standard.StandardDispatchAsync;
 import net.customware.gwt.presenter.client.DefaultEventBus;
 import net.customware.gwt.presenter.client.EventBus;
+import net.customware.gwt.presenter.client.place.PlaceManager;
+import ru.naumen.NauChat.client.auth.CheckLoginDisplay;
+import ru.naumen.NauChat.client.auth.CheckLoginDisplayImpl;
+import ru.naumen.NauChat.client.auth.LoginService;
+import ru.naumen.NauChat.client.auth.LoginServiceStub;
+import ru.naumen.NauChat.client.resources.NauChatListResources;
+import ru.naumen.NauChat.client.resources.NauChatResources;
 
 import com.google.gwt.cell.client.Cell;
 import com.google.gwt.cell.client.TextCell;
@@ -26,7 +31,8 @@ public class NauChatGinModule extends AbstractGinModule
 {
     static class DispatchProvider implements Provider<DispatchAsync>
     {
-        public DispatchAsync get()
+        @Override
+		public DispatchAsync get()
         {
             return new StandardDispatchAsync(new DefaultExceptionHandler());
         }
@@ -39,10 +45,12 @@ public class NauChatGinModule extends AbstractGinModule
         bind(NauChatListResources.class).in(Singleton.class);
 
         bind(NauChatDisplay.class).to(NauChatDisplayImpl.class);
+        bind(CheckLoginDisplay.class).to(CheckLoginDisplayImpl.class);
         bind(EventBus.class).to(DefaultEventBus.class);
         bind(NauChatListDataProvider.class);
         bind(DispatchAsync.class).toProvider(DispatchProvider.class).in(Singleton.class);
-
+        bind(PlaceManager.class).in(Singleton.class);
+        bind(LoginService.class).to(LoginServiceStub.class);
         //@formatter:off
         bind(new TypeLiteral<Cell<String>>(){}).annotatedWith(Names.named(NauChatDisplay.NAU_CHAT_CELL_CODE)).to(TextCell.class);
         //@formatter:on
