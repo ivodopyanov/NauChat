@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='nauchat'>
+  <!-- Inherit the core Web Toolkit stuff.                        -->
+  <inherits name='com.google.gwt.user.User' />
+
+  <!-- We need the JUnit module in the main module,               -->
+  <!-- otherwise eclipse complains (Google plugin bug?)           -->
+  <inherits name='com.google.gwt.junit.JUnit' />
+
+  <!-- Inherit the default GWT style sheet.  You can change       -->
+  <!-- the theme of your GWT application by uncommenting          -->
+  <!-- any one of the following lines.                            -->
+  <inherits name='com.google.gwt.user.theme.standard.Standard' />
+  <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+  <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+  
+  <!-- Other module inherits                                      -->
+  <inherits name='net.customware.gwt.presenter.Presenter' />
+  <inherits name='com.google.gwt.inject.Inject'/>
+  <inherits name='net.customware.gwt.dispatch.Dispatch' />
+  <inherits name="com.google.common.collect.Collect"/>
+  
+
+  <!-- Specify the app entry point class.                         -->
+  <entry-point class='ru.naumen.nauchat.client.NauChatEntryPoint' />
+
+  <!-- Specify the paths for translatable code                    -->
+  <source path='client' />
+  <source path='shared' />
+  
+  <!-- Список браузеров, для которых необходимо сгенерировать код -->
+  <!-- safari - Chrome, gecko1_8 - Firefox 3.5 -->
+  <!-- 
+  <set-property name="user.agent" value="safari,gecko1_8" /> -->
+</module>
