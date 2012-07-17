@@ -26,10 +26,8 @@ coverage.ec
 #*******************************************************************
 *.log
 */.gwt
-webapp*
 
 .directory
 */.directory
 
 gwt-unitCache*
-/home
