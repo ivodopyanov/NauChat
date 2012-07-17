@@ -6,5 +6,5 @@ import com.google.gwt.user.client.rpc.IsSerializable;
 
 public interface ChatMessage extends IsSerializable, Serializable
 {
-	String getMessageText();
+    String getMessageText();
 }

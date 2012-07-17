@@ -31,23 +31,23 @@ public class NauChatListDataProvider extends AsyncDataProvider<String>
         }
 
         @Override
-		public void onFailure(Throwable caught)
+        public void onFailure(Throwable caught)
         {
             GWT.log("Exception while executing GetMessageListAction: " + caught.getMessage());
             display.setRowCount(0);
         }
 
         @Override
-		public void onSuccess(MessageListResult result)
+        public void onSuccess(MessageListResult result)
         {
             display.setRowData(0, Lists.transform(result.getMessages(), new Function<ChatMessage, String>()
-            		{
-            			@Override
-						public String apply(ChatMessage message)
-            			{
-            				return message.getMessageText();
-            			}
-            		}));
+            {
+                @Override
+                public String apply(ChatMessage message)
+                {
+                    return message.getMessageText();
+                }
+            }));
             display.setRowCount(result.getMessages().size());
         }
     }
