@@ -1,5 +1,5 @@
 /*$Id$*/
-package ru.naumen.nauchat.client;
+package ru.naumen.nauchat.client.old;
 
 import net.customware.gwt.dispatch.client.DispatchAsync;
 import ru.naumen.nauchat.shared.action.GetMessageListAction;

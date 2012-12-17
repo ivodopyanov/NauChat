@@ -22,7 +22,7 @@
   
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='ru.naumen.nauchat.client.NauChatEntryPoint' />
+  <entry-point class='ru.naumen.nauchat.client.MainEntryPoint' />
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client' />
@@ -30,6 +30,12 @@
   
   <!-- Список браузеров, для которых необходимо сгенерировать код -->
   <!-- safari - Chrome, gecko1_8 - Firefox 3.5 -->
-  <!-- 
-  <set-property name="user.agent" value="safari,gecko1_8" /> -->
+  <!-- -->
+  <set-property name="user.agent" value="safari,gecko1_8" />
+  
+  <!-- Задаем в качестве единственной локали ru -->
+  <extend-property name="locale" values="ru" />
+  <extend-property name="locale" values="en" />
+  <!--Если не установить значение у locale, то по умолчанию будет default-->
+  <set-property name="locale" value="ru" />
 </module>

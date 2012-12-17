@@ -1,5 +1,5 @@
 /*$Id$*/
-package ru.naumen.nauchat.client;
+package ru.naumen.nauchat.client.old;
 
 import com.google.gwt.resources.client.CssResource;
 

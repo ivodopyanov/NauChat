@@ -1,0 +1,12 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:cell="urn:import:com.google.gwt.user.cellview.client">
+	<ui:with field="res"
+		type="ru.naumen.nauchat.client.resources.NauChatResources" />
+	<ui:with field="msg" type="ru.naumen.nauchat.client.testrunner.PlayerMessages"/>
+	<g:FormPanel ui:field="form" encoding="multipart/form-data" method="post">
+	    <g:FlowPanel>
+	    	<g:FileUpload ui:field="fileSelect"/>
+	    	<g:Button ui:field="fileUpload" text="{msg.uploadSolution}"/>
+	    </g:FlowPanel>
+	</g:FormPanel>
+</ui:UiBinder>

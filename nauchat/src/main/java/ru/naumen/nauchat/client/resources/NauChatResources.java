@@ -1,7 +1,7 @@
 /*$Id$*/
 package ru.naumen.nauchat.client.resources;
 
-import ru.naumen.nauchat.client.NauChatCss;
+import ru.naumen.nauchat.client.old.NauChatCss;
 
 import com.google.gwt.resources.client.ClientBundle;
 

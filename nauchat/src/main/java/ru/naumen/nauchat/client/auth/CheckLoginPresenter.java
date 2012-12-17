@@ -5,7 +5,7 @@ import net.customware.gwt.presenter.client.EventBus;
 import net.customware.gwt.presenter.client.place.Place;
 import net.customware.gwt.presenter.client.place.PlaceRequest;
 import net.customware.gwt.presenter.client.place.PlaceRequestEvent;
-import ru.naumen.nauchat.client.NauChatPresenter;
+import ru.naumen.nauchat.client.testrunner.PlayerPresenter;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -87,7 +87,7 @@ public class CheckLoginPresenter extends BasicPresenter<CheckLoginDisplay>
                             public void onSuccess(Void result)
                             {
                                 // Меняем плейс
-                                eventBus.fireEvent(new PlaceRequestEvent(new PlaceRequest(NauChatPresenter.PLACE)));
+                                eventBus.fireEvent(new PlaceRequestEvent(new PlaceRequest(PlayerPresenter.PLACE)));
                             }
                         });
             }

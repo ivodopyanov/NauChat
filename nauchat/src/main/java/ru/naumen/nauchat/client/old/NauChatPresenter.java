@@ -1,12 +1,12 @@
 /*$Id$*/
-package ru.naumen.nauchat.client;
+package ru.naumen.nauchat.client.old;
 
 import net.customware.gwt.dispatch.client.DispatchAsync;
 import net.customware.gwt.presenter.client.BasicPresenter;
 import net.customware.gwt.presenter.client.EventBus;
 import net.customware.gwt.presenter.client.place.Place;
 import net.customware.gwt.presenter.client.place.PlaceRequest;
-import ru.naumen.nauchat.client.NauChatListDataProvider.RangeChangedCallback;
+import ru.naumen.nauchat.client.old.NauChatListDataProvider.RangeChangedCallback;
 import ru.naumen.nauchat.shared.action.SendMessageAction;
 import ru.naumen.nauchat.shared.message.ChatMessageImpl;
 
