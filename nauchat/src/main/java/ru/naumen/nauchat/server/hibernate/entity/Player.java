@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ru.naumen.nauchat.server.entity;
+package ru.naumen.nauchat.server.hibernate.entity;
 
 import java.io.Serializable;
 import java.util.Set;

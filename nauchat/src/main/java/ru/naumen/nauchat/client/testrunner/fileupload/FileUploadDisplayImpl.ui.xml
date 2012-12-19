@@ -3,7 +3,7 @@
 	<ui:with field="res"
 		type="ru.naumen.nauchat.client.resources.NauChatResources" />
 	<ui:with field="msg" type="ru.naumen.nauchat.client.testrunner.PlayerMessages"/>
-	<g:FormPanel ui:field="form" encoding="multipart/form-data" method="post">
+	<g:FormPanel ui:field="form" encoding="multipart/form-data" method="post" action="upload">
 	    <g:FlowPanel>
 	    	<g:FileUpload ui:field="fileSelect"/>
 	    	<g:Button ui:field="fileUpload" text="{msg.uploadSolution}"/>
